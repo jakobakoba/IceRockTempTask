@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactFragment">
+
+    <ImageView
+        android:id="@+id/avatarImg"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/avatar1" />
+
+    <TextView
+        android:id="@+id/nameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        app:layout_constraintTop_toBottomOf="@id/avatarImg"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/personName"
+        app:layout_constraintStart_toStartOf="@id/personLastName"
+        app:layout_constraintTop_toTopOf="@id/nameTitle"
+        tools:text = "Alex"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastNameTitle"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/nameTitle"
+        app:layout_constraintStart_toStartOf="@id/nameTitle"
+        android:text="@string/last_name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/personLastName"
+        app:layout_constraintStart_toEndOf="@id/lastNameTitle"
+        app:layout_constraintTop_toTopOf="@id/lastNameTitle"
+        android:layout_marginStart="20dp"
+        tools:text = "Smith"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/contacts_fragment">
+    <fragment
+        android:id="@+id/contacts_fragment"
+        android:name="dev.icerock.education.icerocktemptask.ContactsFragment"
+        android:label="Contacts"
+        tools:layout="@layout/fragment_contacts">
+        <action
+            android:id="@+id/to_contact_fragment"
+            app:destination="@id/contact_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contact_fragment"
+        android:name="dev.icerock.education.icerocktemptask.ContactFragment"
+        android:label="Contact"
+        tools:layout="@layout/fragment_contact" >
+        <action
+            android:id="@+id/to_contacts_fragment"
+            app:destination="@id/contacts_fragment" />
+    </fragment>
+
+</navigation>
