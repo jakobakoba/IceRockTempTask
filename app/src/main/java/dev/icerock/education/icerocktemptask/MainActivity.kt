@@ -9,10 +9,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import dev.icerock.education.icerocktemptask.databinding.ActivityMainBinding
 
-enum class Destinations{
-    CONTACTS,
-    CONTACT
-}
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -28,16 +24,8 @@ class MainActivity : AppCompatActivity() {
             view.setPadding(insets.left, insets.top, insets.right, 0)
             WindowInsetsCompat.CONSUMED
         }
-
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.frameLayout) as NavHostFragment
         navController = navHostFragment.navController
-
-
-
     }
-
-
-
-
 }

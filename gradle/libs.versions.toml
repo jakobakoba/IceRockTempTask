@@ -11,6 +11,7 @@ activity = "1.9.3"
 constraintlayout = "2.2.0"
 navigation = "2.8.5"
 kotlinxSerializationVersion = "1.8.0-RC"
+navigationSafeArgsGradlePlugin = "2.8.5"
 pluginSerializationVersion = "2.1.0"
 
 [libraries]

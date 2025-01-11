@@ -6,15 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.icerock.education.icerocktemptask.databinding.ItemLayoutBinding
 
 class Adapter(
-    private val onItemClick: () -> Unit
+    private val onItemClick: (Contact) -> Unit
 ): RecyclerView.Adapter<Adapter.ItemViewHolder>() {
 
     val contacts = listOf(
         Contact("John", "Doe", R.drawable.avatar1),
-        Contact("Jane", "Smith", R.drawable.avatar1),
-        Contact("Emily", "Brown", R.drawable.avatar1),
-        Contact("Michael", "Johnson", R.drawable.avatar1),
-        Contact("Sarah", "Davis", R.drawable.avatar1)
+        Contact("Jane", "Smith", R.drawable.avatar2),
+        Contact("Emily", "Brown", R.drawable.avatar3),
+        Contact("Michael", "Johnson", R.drawable.avatar4),
+        Contact("Sarah", "Davis", R.drawable.avatar5)
     )
 
 
@@ -24,7 +24,7 @@ class Adapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(contacts[position])
-        holder.itemView.setOnClickListener { onItemClick() }
+        holder.itemView.setOnClickListener { onItemClick(contacts[position]) }
 
     }
 

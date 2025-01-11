@@ -27,13 +27,18 @@ class ContactsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView = binding.recyclerView
 
-        adapter = Adapter{onItemClick()}
+        adapter = Adapter { contact ->
+            val bundle = Bundle().apply{
+                putString("firstName", contact.firstName)
+                putString("lastName", contact.lastName)
+                putInt("avatar", contact.avatarResourceId)
+            }
+            findNavController().navigate(
+                R.id.to_contact_fragment,
+                bundle
+            )
+        }
         recyclerView.adapter = adapter
 
-    }
-
-
-    private fun onItemClick(){
-        findNavController().navigate(R.id.to_contact_fragment)
     }
 }

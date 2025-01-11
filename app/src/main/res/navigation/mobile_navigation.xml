@@ -18,9 +18,7 @@
         android:name="dev.icerock.education.icerocktemptask.ContactFragment"
         android:label="Contact"
         tools:layout="@layout/fragment_contact" >
-        <action
-            android:id="@+id/to_contacts_fragment"
-            app:destination="@id/contacts_fragment" />
+
     </fragment>
 
 </navigation>

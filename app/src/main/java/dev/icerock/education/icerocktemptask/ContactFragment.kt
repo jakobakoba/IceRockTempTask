@@ -4,31 +4,31 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import dev.icerock.education.icerocktemptask.databinding.FragmentContactBinding
 
 
 class ContactFragment : Fragment() {
-
+    private lateinit var binding: FragmentContactBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_contact, container, false)
+    ): View {
+        binding = FragmentContactBinding.inflate(inflater, container, false)
+        return binding.root
+
     }
 
-    private val userId: String
-        get() = requireArguments().getString(USER_ID_KEY).let{
-            requireNotNull(it)
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val firstName = requireArguments().getString("firstName")
+        val lastName = requireArguments().getString("lastName")
+        val avatar = requireArguments().getInt("avatar")
 
-    companion object {
-        private const val USER_ID_KEY = "userIdKey"
-
-        fun createArguments(userIdKey: String): Bundle {
-            return bundleOf(USER_ID_KEY to userIdKey)
-        }
+        binding.personName.text = firstName
+        binding.personLastName.text = lastName
+        binding.avatarImg.setImageResource(avatar)
     }
 
 }
